@@ -15,3 +15,11 @@ services:
     ports:
       # localport:containerport
       - '5432:5432'
+
+  web:
+    container_name: ctag_entry
+    build: ./server
+    ports:
+      - "4444:4444"
+    depends_on:
+      - "postgres"

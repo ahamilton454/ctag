@@ -29,14 +29,7 @@ pool.connect((err, client, release) => {
   
   
 app.get('/', (req, res) => {
-    pool.query(`SELECT * from ctag_profile limit 1`)
-      .then((data) => {
-        res.status(200).send(data);
-      })
-      .catch((err) => {
-        res.status(500).send("Query Failed: " + err);
-      })
-    
+  res.status(200).send(data);
 });
 
 // Get User Data
@@ -50,8 +43,12 @@ app.get('/profile/:userhash', (req, res) => {
     })
     .catch((err) => {
       res.status(500).send(err);
-    })
+    });
 })
+
+app.post('/profile', (req, res) => {
+
+});
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 

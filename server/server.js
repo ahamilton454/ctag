@@ -29,15 +29,29 @@ pool.connect((err, client, release) => {
   
   
 app.get('/', (req, res) => {
-    pool.query(`SELECT * from "user" limit 1`)
-        .then((data) => {
-          res.status(200).send(data);
-        })
-        .catch((err) => {
-          res.status(500).send("Query Failed: " + err);
-        })
+    pool.query(`SELECT * from ctag_profile limit 1`)
+      .then((data) => {
+        res.status(200).send(data);
+      })
+      .catch((err) => {
+        res.status(500).send("Query Failed: " + err);
+      })
     
 });
+
+// Get User Data
+app.get('/profile/:userhash', (req, res) => {
+  userhash = req.params.userhash;
+  console.log(userhash);
+
+  pool.query(`SELECT * FROM ctag_profile WHERE hashpoint='${userhash}'`)
+    .then((data) => {
+      res.status(200).send(data);
+    })
+    .catch((err) => {
+      res.status(500).send(err);
+    })
+})
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 

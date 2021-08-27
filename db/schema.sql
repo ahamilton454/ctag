@@ -1,7 +1,7 @@
 SELECT 'CREATE DATABASE ctagdb'
 WHERE NOT EXISTS (SELECT FROM pg_database WHERE datname = 'ctagdb')\gexec
 
-CREATE TABLE "user"(
+CREATE TABLE ctag_profile(
   ID SERIAL PRIMARY KEY,
   name VARCHAR(100) NOT NULL,
   biography TEXT,
@@ -11,10 +11,10 @@ CREATE TABLE "user"(
 
 CREATE TABLE media(
   ID SERIAL PRIMARY KEY,
-  user_id INT,
-  CONSTRAINT user_id
-    FOREIGN KEY(user_id)
-      REFERENCES "user"(ID),
+  ctag_id INT,
+  CONSTRAINT ctag_id
+    FOREIGN KEY(ctag_id)
+      REFERENCES ctag_profile(ID),
   type TEXT,
   url TEXT
 );
@@ -28,6 +28,6 @@ CREATE TABLE media_photo(
   url TEXT
 );
 
-\copy "user" FROM '/tmp/users.csv' WITH (FORMAT csv);
+\copy ctag_profile FROM '/tmp/users.csv' WITH (FORMAT csv);
 \copy media FROM '/tmp/medias.csv' WITH (FORMAT csv);
 \copy media_photo FROM '/tmp/media_photos.csv' WITH (FORMAT csv);

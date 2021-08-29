@@ -16,7 +16,7 @@ class Media extends React.Component {
             <a href="https://github.com/Joeyryanbridges">
                 <img src={this.state.photoURL} height={100} width={100}></img>
             </a>
-            <h1>LinkedOut</h1>
+            <h1>LinkedOut22</h1>
         </div>);
     }
 }

@@ -19,6 +19,7 @@ class Media extends React.Component {
             <h1>LinkedIn</h1>
         </div>);
     }
+    
 }
 
 export default Media;

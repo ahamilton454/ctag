@@ -1,7 +1,9 @@
 const express = require('express');
+var path = require("path");
 const app = express()
 const port = 4444
 
+app.use(express.static("./client/dist"));
 app.use(express.json());
 
 const { Pool } = require('pg');
@@ -14,22 +16,22 @@ const pool = new Pool({
 });
 
 pool.connect((err, client, release) => {
+  if (err) {
+    return console.error('Error acquiring client', err.stack)
+  }
+
+  client.query('SELECT NOW()', (err, result) => {
+    release()
     if (err) {
-      return console.error('Error acquiring client', err.stack)
+      return console.error('Error executing query', err.stack)
     }
-  
-    client.query('SELECT NOW()', (err, result) => {
-      release()
-      if (err) {
-        return console.error('Error executing query', err.stack)
-      }
-      console.log(result.rows)
-    })
-  });
+    console.log(result.rows)
+  })
+});
   
   
 app.get('/', (req, res) => {
-  res.status(200).send(data);
+  res.status(200).send("Server up and Running!");
 });
 
 // Get User Data

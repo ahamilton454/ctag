@@ -3,7 +3,6 @@ var path = require("path");
 const app = express()
 const port = 4444
 
-app.use(express.static("./client/dist"));
 app.use(express.json());
 
 const { Pool } = require('pg');
@@ -28,8 +27,7 @@ pool.connect((err, client, release) => {
     console.log(result.rows)
   })
 });
-  
-  
+
 app.get('/', (req, res) => {
   res.status(200).send("Server up and Running!");
 });

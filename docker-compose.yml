@@ -18,7 +18,7 @@ services:
 
   web:
     container_name: ctag_entry
-    build: ./server
+    build: .
     ports:
       - "4444:4444"
     depends_on:

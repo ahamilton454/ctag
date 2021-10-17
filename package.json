@@ -6,7 +6,9 @@
   "scripts": {
     "react-dev": "webpack --mode development --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "build": "webpack",
+    "watchbuild": "nodemon --watch ./ --ext js,css --ignore dist --exec \"npm run build\""
   },
   "author": "",
   "license": "ISC",
@@ -19,11 +21,13 @@
     "@babel/preset-env": "^7.15.0",
     "@babel/preset-react": "^7.14.5",
     "babel-loader": "^8.2.2",
+    "css-loader": "^6.4.0",
     "dotenv-webpack": "^7.0.3",
     "express": "^4.17.1",
     "nodemon": "^2.0.12",
     "pg": "^8.7.1",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "style-loader": "^3.3.0"
   }
 }

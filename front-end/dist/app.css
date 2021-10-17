@@ -1,0 +1,9 @@
+:root {
+  --theme-color: rgb(178,26,27);
+  --theme-color-translucent: rgba(178,26,27, 0.5);
+  --theme-font: verdana
+}
+
+body {
+  margin: 0
+}

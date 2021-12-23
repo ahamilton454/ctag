@@ -1,0 +1,14 @@
+.custom-text-field {
+  border-style: none;
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+.custom-placeholder {
+  padding: 0;
+  margin: 0;
+}

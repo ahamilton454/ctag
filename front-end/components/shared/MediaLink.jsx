@@ -18,12 +18,9 @@ class MediaLink extends React.Component {
 
     render() {
         return (
-            <div className="media">
-                <a href={this.props.link}>
-                    <img
-                        src={this.props.photoURL}
-                        height={"100%"}
-                        width={"100%"}>
+            <div className="media-link">
+                <a href="https://www.google.com">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png">
                     </img>
                 </a>
             </div>);
@@ -32,3 +29,5 @@ class MediaLink extends React.Component {
 }
 
 export default MediaLink;
+
+

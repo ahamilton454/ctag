@@ -19,9 +19,11 @@ const PageHeader = ({ title, rightButtonText, rightButtonCommand,
 
     return (
         <div className="page-header">
-            <h1 onClick={leftButtonCommand}>{leftButtonText}</h1>
+            <h1 style={{ marginRight: "auto" }}
+                onClick={leftButtonCommand}>{leftButtonText}</h1>
             <h1>{title}</h1>
-            <h1 onClick={rightButtonCommand}>{rightButtonText}</h1>
+            <h1 style={{ marginLeft: "auto" }}
+                onClick={rightButtonCommand}>{rightButtonText}</h1>
         </div>
     );
 

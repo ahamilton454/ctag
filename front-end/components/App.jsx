@@ -3,6 +3,7 @@ import MediaLink from './shared/MediaLink.jsx';
 import PageHeader from './shared/PageHeader.jsx';
 import TextEntry from './shared/TextEntry.jsx';
 import BottomModal from './shared/BottomModal.jsx';
+import LoginView from './Auth/LoginView.jsx';
 
 class App extends React.Component {
 
@@ -21,7 +22,8 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <PageHeader title="CTag"
+        <LoginView></LoginView>
+        {/* <PageHeader title="CTag"
           rightButtonText="Login"
           rightButtonCommand={() => { console.log("Logged In") }} />
         <div className="vstack-links">
@@ -31,11 +33,11 @@ class App extends React.Component {
             value={this.state.value}
             onChange={this.onTextChange}
           />
-        </div>
+      </div> */}
 
 
 
-      </div>
+      </div >
     );
   }
 }

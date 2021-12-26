@@ -21,12 +21,10 @@ class LoginView extends React.Component {
 
   setUsername = (value) => {
     this.setState({ loginUsername: value });
-    console.log(this.state);
   }
 
   setPassword = (value) => {
     this.setState({ loginPassword: value });
-    console.log(this.state)
   }
 
   render() {

@@ -1,32 +1,32 @@
 import React from 'react';
 import loginIcon from './static/LoginIcon.png';
 import TextEntry from '../shared/TextEntry.jsx';
-import './static/AuthStyles.css'
+import CustomButton from '../shared/CustomButton.jsx';
+import './static/AuthStyles.css';
 // Convert to absolute import later
 
 /**
- * @param:
- * @returns: [html div] which spans all allotted space
+ * @returns: Full screen view of login page
  */
 
 class LoginView extends React.Component {
 
   constructor(props) {
     super(props);
-    this.loginUsername = '';
-    this.loginPassword = '';
+    this.state = {
+      loginUsername: '',
+      loginPassword: '',
+    }
   }
 
   setUsername = (value) => {
-    this.loginUsername = value;
-    // this.setState({ loginUsername: value });
-    console.log("testprop", this.loginUsername);
+    this.setState({ loginUsername: value });
+    console.log(this.state);
   }
 
   setPassword = (value) => {
-    this.testProp = value;
-    // this.setState({ loginUsername: value });
-    console.log("testprop", this.testProp)
+    this.setState({ loginPassword: value });
+    console.log(this.state)
   }
 
   render() {
@@ -55,6 +55,8 @@ class LoginView extends React.Component {
             onChange={this.setPassword}>
           </TextEntry>
         </div>
+
+
 
       </div>
     )

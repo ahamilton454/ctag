@@ -3,6 +3,7 @@ import MediaLink from './shared/MediaLink.jsx';
 import PageHeader from './shared/PageHeader.jsx';
 import TextEntry from './shared/TextEntry.jsx';
 import BottomModal from './shared/BottomModal.jsx';
+import LoginView from './Auth/LoginView.jsx';
 
 class App extends React.Component {
 

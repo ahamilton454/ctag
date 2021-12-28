@@ -28,7 +28,7 @@ class LoginView extends React.Component {
   }
 
   buttonclick = () => {
-    console.log("Button Clicked");
+    console.log(`Attempted login for user ${this.state.loginUsername}`);
   }
 
   render() {
@@ -66,8 +66,8 @@ class LoginView extends React.Component {
           buttonText='Login'
           buttonCallback={this.buttonclick}>
         </CustomButton>
-
-        <h2 style={{ textAlign: 'center', fontFamily: 'var(--theme-font)' }}>Create Account</h2>
+        <h2 style={{ textAlign: 'center', fontFamily: 'var(--theme-font)' }}>
+          Create Account</h2>
 
       </div>
     )

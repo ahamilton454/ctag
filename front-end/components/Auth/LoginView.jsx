@@ -27,6 +27,10 @@ class LoginView extends React.Component {
     this.setState({ loginPassword: value });
   }
 
+  buttonclick = () => {
+    console.log("Button Clicked");
+  }
+
   render() {
     return (
       <div>
@@ -54,7 +58,16 @@ class LoginView extends React.Component {
           </TextEntry>
         </div>
 
+        <div style={{ height: '10vw' }}></div>
 
+        <CustomButton
+          buttonClass='rainbow-button'
+          buttonTextClass='large-white'
+          buttonText='Login'
+          buttonCallback={this.buttonclick}>
+        </CustomButton>
+
+        <h2 style={{ textAlign: 'center', fontFamily: 'var(--theme-font)' }}>Create Account</h2>
 
       </div>
     )

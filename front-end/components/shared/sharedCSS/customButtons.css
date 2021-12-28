@@ -1,0 +1,13 @@
+.rainbow-button {
+  height: 12vw;
+  width: 60vw;
+  line-height:12vw;
+  background-image: 
+    linear-gradient(to right, rgb(255, 129, 129), rgb(255, 206, 116), rgb(255, 255, 137), rgb(178, 240, 170), rgb(128, 253, 226), rgb(244, 219, 255));
+}
+
+.large-white {
+  font-family: var(--theme-font);
+  color: white;
+  font-size: 50px;
+}

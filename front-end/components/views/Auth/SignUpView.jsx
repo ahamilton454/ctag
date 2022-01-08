@@ -9,12 +9,13 @@ import CustomButton from '../../shared/CustomButton.jsx';
  * @returns: Full screen view of login page
  */
 
-class LoginView extends React.Component {
+class SignUpView extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
       username: '',
+      email: '',
       password: '',
     }
   }
@@ -24,16 +25,21 @@ class LoginView extends React.Component {
   }
 
   setPassword = (value) => {
+    this.setState({ email: value });
+  }
+
+  setPassword = (value) => {
     this.setState({ password: value });
   }
 
-  loginButtonClick = () => {
-    console.log(`Attempted login for user ${this.state.username}`);
+  signUpButtonClick = () => {
+    console.log(`Attempted to create user ${this.state.username}`);
   }
 
   render() {
     return (
       <div>
+        <h3>Back to Login</h3>
         <img
           className='login-icon'
           src={loginIcon}
@@ -53,6 +59,14 @@ class LoginView extends React.Component {
         <div className='login-field'>
           <TextEntry
             className='login-field'
+            placeholder={'Email'}
+            onChange={this.setPassword}>
+          </TextEntry>
+        </div>
+        <div style={{ height: '5vw' }}></div>
+        <div className='login-field'>
+          <TextEntry
+            className='login-field'
             placeholder={'Password'}
             onChange={this.setPassword}>
           </TextEntry>
@@ -64,7 +78,7 @@ class LoginView extends React.Component {
           buttonClass='rainbow-button'
           buttonTextClass='large-white'
           buttonText='Login'
-          buttonCallback={this.loginButtonClick}>
+          buttonCallback={this.signUpButtonClick}>
         </CustomButton>
         <h2 style={{ textAlign: 'center', fontFamily: 'var(--theme-font)' }}>
           Create Account</h2>
@@ -76,4 +90,4 @@ class LoginView extends React.Component {
 
 }
 
-export default LoginView;
+export default SignUpView;

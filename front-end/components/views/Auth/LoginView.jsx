@@ -1,9 +1,8 @@
 import React from 'react';
 import loginIcon from './static/LoginIcon.png';
-import TextEntry from '../shared/TextEntry.jsx';
-import CustomButton from '../shared/CustomButton.jsx';
+import TextEntry from '../../shared/TextEntry.jsx';
 import './static/AuthStyles.css';
-// Convert to absolute import later
+import { Link } from 'react-router-dom';
 
 /**
  * @returns: Full screen view of login page
@@ -53,7 +52,7 @@ class LoginView extends React.Component {
             onChange={this.setPassword}>
           </TextEntry>
         </div>
-
+        <Link to="/preview">Preview</Link>
 
 
       </div>

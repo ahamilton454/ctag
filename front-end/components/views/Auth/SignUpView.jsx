@@ -39,7 +39,10 @@ class SignUpView extends React.Component {
   render() {
     return (
       <div>
-        <h3>Back to Login</h3>
+        <Link to="/login">
+          <h3>Back to Login</h3>
+        </Link>
+
         <img
           className='login-icon'
           src={loginIcon}
@@ -55,7 +58,9 @@ class SignUpView extends React.Component {
             onChange={this.setUsername}>
           </TextEntry>
         </div>
+
         <div style={{ height: '5vw' }}></div>
+
         <div className='login-field'>
           <TextEntry
             className='login-field'
@@ -63,7 +68,9 @@ class SignUpView extends React.Component {
             onChange={this.setPassword}>
           </TextEntry>
         </div>
+
         <div style={{ height: '5vw' }}></div>
+
         <div className='login-field'>
           <TextEntry
             className='login-field'
@@ -74,14 +81,14 @@ class SignUpView extends React.Component {
 
         <div style={{ height: '10vw' }}></div>
 
-        <CustomButton
-          buttonClass='rainbow-button'
-          buttonTextClass='large-white'
-          buttonText='Login'
-          buttonCallback={this.signUpButtonClick}>
-        </CustomButton>
-        <h2 style={{ textAlign: 'center', fontFamily: 'var(--theme-font)' }}>
-          Create Account</h2>
+        <Link to="/preview">
+          <CustomButton
+            buttonClass='rainbow-button'
+            buttonTextClass='large-white'
+            buttonText='Sign Up'
+            buttonCallback={this.signUpButtonClick}>
+          </CustomButton>
+        </Link>
 
       </div>
     )

@@ -66,8 +66,11 @@ class LoginView extends React.Component {
           buttonText='Login'
           buttonCallback={this.loginButtonClick}>
         </CustomButton>
-        <h2 style={{ textAlign: 'center', fontFamily: 'var(--theme-font)' }}>
-          Create Account</h2>
+
+        <Link to="/signup">
+          <h2 style={{ textAlign: 'center', fontFamily: 'var(--theme-font)' }}>
+            Create Account</h2>
+        </Link>
 
       </div>
     )

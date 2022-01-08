@@ -27,8 +27,10 @@ class App extends React.Component {
         <div className='app'>
           <Routes>
             <Route path="/">
-              <Route index element={<SignUpView />} />
+              <Route index element={<LoginView />} />
               <Route path="preview" element={<PreviewProfile />} />
+              <Route path="login" element={<LoginView />} />
+              <Route path="signup" element={<SignUpView />} />
             </Route>
           </Routes>
         </div>

@@ -1,6 +1,6 @@
 .custom-text-field {
   border-style: none;
-  font-size: 18px;
+  font-size: 40px;
   padding: 10px 10px 10px 5px;
   display: block;
   width: 100%;
@@ -9,6 +9,7 @@
 }
 
 .custom-placeholder {
+  font-size: 30px;
   padding: 0;
   margin: 0;
 }

@@ -3,7 +3,7 @@
   width: 60vw;
   line-height:12vw;
   background-image: 
-    linear-gradient(to right, rgb(255, 129, 129), rgb(255, 206, 116), rgb(255, 255, 137), rgb(178, 240, 170), rgb(128, 253, 226), rgb(244, 219, 255));
+    linear-gradient(to right, rgb(255, 0, 0), rgb(255, 127, 0), rgb(255, 255, 0), rgb(0, 255, 0), rgb(95, 95, 253), rgb(148, 0, 211));
 }
 
 .large-white {

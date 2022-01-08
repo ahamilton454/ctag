@@ -3,6 +3,7 @@ import loginIcon from './static/LoginIcon.png';
 import TextEntry from '../../shared/TextEntry.jsx';
 import './static/AuthStyles.css';
 import { Link } from 'react-router-dom';
+import CustomButton from '../../shared/CustomButton.jsx';
 
 /**
  * @returns: Full screen view of login page
@@ -58,8 +59,6 @@ class LoginView extends React.Component {
         </div>
 
         <div style={{ height: '10vw' }}></div>
-
-        <Link to="/preview">Preview</Link>
 
         <CustomButton
           buttonClass='rainbow-button'

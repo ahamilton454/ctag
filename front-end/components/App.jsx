@@ -3,39 +3,36 @@ import MediaLink from './shared/MediaLink.jsx';
 import PageHeader from './shared/PageHeader.jsx';
 import TextEntry from './shared/TextEntry.jsx';
 import BottomModal from './shared/BottomModal.jsx';
+import LoginView from './views/Auth/LoginView.jsx';
+import PreviewProfile from './views/Preview/PreviewProfile.jsx'
+
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router-dom";
+
 
 class App extends React.Component {
 
   constructor() {
     super()
 
-    this.state = {
-      value: ""
-    }
-  }
-
-  onTextChange(value) {
-    console.log(value);
   }
 
   render() {
     return (
-      <div>
-        <PageHeader title="CTag"
-          rightButtonText="Login"
-          rightButtonCommand={() => { console.log("Logged In") }} />
-        <div className="vstack-links">
-          <MediaLink link="https://www.google.com" photoURL="https://bit.ly/3vj6yOw" />
-          <TextEntry
-            placeholder="Username"
-            value={this.state.value}
-            onChange={this.onTextChange}
-          />
+      <BrowserRouter>
+        <div className='app'>
+          <Routes>
+            <Route path="/">
+              <Route index element={<LoginView />} />
+              <Route path="preview" element={<PreviewProfile />} />
+            </Route>
+          </Routes>
         </div>
+      </BrowserRouter>
 
-
-
-      </div>
     );
   }
 }

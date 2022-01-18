@@ -1,0 +1,27 @@
+.login-icon {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 41vw;
+  padding-top: 20vh;
+}
+
+.ctag-text {
+  text-align: center;
+  color: black;
+  font-family: var(--theme-font);
+  font-size: 30px;
+}
+
+.rectangle {
+  height: 50px;
+  width: calc(100vw / 2);
+  background-color: yellowgreen;
+  margin: 0 auto;
+}
+
+.login-field {
+  width: calc(100vw / 2);
+  margin: 0 auto;
+}
+

@@ -22,16 +22,34 @@ class App extends React.Component {
 
   }
 
+  renderWithHeader(view) {
+    return (
+      <div className='header-view'>
+        <Link to="/login">
+          <PageHeader title="CTag"
+            rightButtonText="Login"
+            rightButtonCommand={() => { console.log("Logged In") }} />
+        </Link>
+        <div className='header-subview' style={{ paddingTop: "126px" }}>
+          {view}
+        </div>
+      </div>
+    )
+  }
+
   render() {
     return (
       <BrowserRouter>
         <div className='app'>
-          <Link to="/login">
-            <PageHeader title="CTag"
-              rightButtonText="Login"
-              rightButtonCommand={() => { console.log("Logged In") }} />
-          </Link>
-          <PreviewProfile />
+          <Routes>
+            <Route path="/">
+              <Route index element={<LoginView />} />
+              <Route path="preview"
+                element={this.renderWithHeader(<PreviewProfile />)} />
+              <Route path="login" element={<LoginView />} />
+              <Route path="signup" element={<SignUpView />} />
+            </Route>
+          </Routes>
         </div>
       </BrowserRouter>
 

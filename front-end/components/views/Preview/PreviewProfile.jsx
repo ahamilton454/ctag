@@ -21,14 +21,12 @@ class PreviewProfile extends React.Component {
   render() {
     return (
       <div className='preview-profile'>
-
         <div className="vstack-links">
           <MediaLink />
           <MediaLink />
           <MediaLink />
           <MediaLink />
           <MediaLink />
-
         </div>
       </div>
     )

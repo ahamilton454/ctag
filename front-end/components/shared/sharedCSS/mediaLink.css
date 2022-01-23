@@ -1,16 +1,9 @@
-
-
 .media-image {
   object-fit: cover;
   position: relative;
   width: 100%;
 }
 
-
-
 .media-link {
-  display: flex;
-  justify-content: center;
   max-width: 90%;
-  min-width: 70%;
 }

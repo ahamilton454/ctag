@@ -1,0 +1,26 @@
+.preview-profile {
+  width: 100%;
+}
+
+.vstack-links {
+  width: 1fr;
+  height: auto;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-items: center;
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .vstack-links { 
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media (min-width: 1000px) {
+  .vstack-links { 
+    grid-template-columns: repeat(3, 1fr); 
+  }
+}

@@ -12,10 +12,19 @@
   width: 250px;
   border-radius: 25px;
   overflow: hidden;
+  position: absolute;
+  z-index: 1000;
 }
 
 .dropdownHeaderContainer {
   width: 250px;
   border-radius: 15px;
   overflow: hidden;
+}
+
+.linkEntryContainer {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  justify-items: center;
 }

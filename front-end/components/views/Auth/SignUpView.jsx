@@ -9,12 +9,13 @@ import CustomButton from '../../shared/CustomButton.jsx';
  * @returns: Full screen view of login page
  */
 
-class LoginView extends React.Component {
+class SignUpView extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
       username: '',
+      email: '',
       password: '',
     }
   }
@@ -24,16 +25,24 @@ class LoginView extends React.Component {
   }
 
   setPassword = (value) => {
+    this.setState({ email: value });
+  }
+
+  setPassword = (value) => {
     this.setState({ password: value });
   }
 
-  loginButtonClick = () => {
-    console.log(`Attempted login for user ${this.state.username}`);
+  signUpButtonClick = () => {
+    console.log(`Attempted to create user ${this.state.username}`);
   }
 
   render() {
     return (
       <div>
+        <Link to="/login">
+          <h3>Back to Login</h3>
+        </Link>
+
         <img
           className='login-icon'
           src={loginIcon}
@@ -49,7 +58,19 @@ class LoginView extends React.Component {
             onChange={this.setUsername}>
           </TextEntry>
         </div>
+
         <div style={{ height: '5vw' }}></div>
+
+        <div className='login-field'>
+          <TextEntry
+            className='login-field'
+            placeholder={'Email'}
+            onChange={this.setPassword}>
+          </TextEntry>
+        </div>
+
+        <div style={{ height: '5vw' }}></div>
+
         <div className='login-field'>
           <TextEntry
             className='login-field'
@@ -60,16 +81,13 @@ class LoginView extends React.Component {
 
         <div style={{ height: '10vw' }}></div>
 
-        <CustomButton
-          buttonClass='rainbow-button'
-          buttonTextClass='large-white'
-          buttonText='Login'
-          buttonCallback={this.loginButtonClick}>
-        </CustomButton>
-
-        <Link to="/signup">
-          <h2 style={{ textAlign: 'center', fontFamily: 'var(--theme-font)' }}>
-            Create Account</h2>
+        <Link to="/preview">
+          <CustomButton
+            buttonClass='rainbow-button'
+            buttonTextClass='large-white'
+            buttonText='Sign Up'
+            buttonCallback={this.signUpButtonClick}>
+          </CustomButton>
         </Link>
 
       </div>
@@ -79,4 +97,4 @@ class LoginView extends React.Component {
 
 }
 
-export default LoginView;
+export default SignUpView;

@@ -1,3 +1,4 @@
 /db/data
 /node_modules
 /front-end/dist/bundle.js
+*/.DS_Store

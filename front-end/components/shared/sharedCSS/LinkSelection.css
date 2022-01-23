@@ -1,0 +1,30 @@
+.singleLinkTypeOption {
+  color: white;
+  height: 60px;
+  font-family: var(--theme-font);
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  line-height: 60px;
+}
+
+.dropdownContainer {
+  width: 250px;
+  border-radius: 25px;
+  overflow: hidden;
+  position: absolute;
+  z-index: 1000;
+}
+
+.dropdownHeaderContainer {
+  width: 250px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.linkEntryContainer {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  justify-items: center;
+}

@@ -28,6 +28,7 @@ class PreviewProfile extends React.Component {
           <MediaLink />
           <MediaLink />
         </div>
+        <LinkTypeDropdown></LinkTypeDropdown>
       </div>
     )
   }

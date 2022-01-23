@@ -1,59 +1,68 @@
 import React from 'react';
+import './sharedCSS/LinkSelection.css'
+import linkTypeColorMapping from './linkTypeColorMapping';
 
 /**
- * @returns: Dropdown for selecting link icon
+ * @returns: Pretty dropdown menu for selecting media link icon
  */
 
 
-const LinkTypeDropdownHead = ({ value }) => {
-
+const LinkTypeSelection = ({ linkTypeSelection, click }) => {
   return (
-    <div>
-      <h3>{value}</h3>
+    <div className='singleLinkTypeOption'
+      onClick={() => { click(linkTypeSelection) }}
+      style={{ backgroundColor: linkTypeColorMapping[linkTypeSelection] }}>
+      {linkTypeSelection}
     </div>
-  );
-
+  )
 }
 
-
 class LinkTypeDropdown extends React.Component {
-
-
-  linkTypeOptions = [
-    { type: "Linkedin", color: "lightblue" },
-    { type: "GitHub", color: "gray" },
-    { type: "Facebook", color: "blue" },
-    { type: "Custom", color: "lightgrey" },
-  ];
-
 
   constructor(props) {
     super(props);
     this.state = {
-      selectedLinkType: this.linkTypeOptions[0].type,
+      selectedLinkType: props.initialLinkType || "Linkedin",
       visible: false,
     }
   }
 
   toggleDropdown = () => {
-    console.log(this.state);
-    console.log(this.state.visible)
     this.setState({ visible: !this.state.visible });
   }
 
+  updateLinkSelection = (currentLinkOption) => {
+    if (this.state.visible) {
+      this.setState({ selectedLinkType: currentLinkOption });
+      this.toggleDropdown();
+    }
+  }
+
   renderDropdown() {
+    // Display all dropdown options
     if (this.state.visible) {
       return (
-        <div onClick={this.toggleDropdown}>
-          {this.linkTypeOptions.map((linkOption) => {
-            return (<h1 key={linkOption.type}>{linkOption.type}</h1>);
+        <div className='dropdownContainer'
+          onClick={this.toggleDropdown}>
+          {Object.keys(linkTypeColorMapping).map((linkTypeOption) => {
+            return (
+              <LinkTypeSelection
+                key={linkTypeOption}
+                linkTypeSelection={linkTypeOption}
+                click={this.updateLinkSelection}
+              ></LinkTypeSelection>);
           })}
         </div>
       )
+      // Display only currently selected option
     } else {
       return (
-        <div onClick={this.toggleDropdown}>
-          <h1>{this.state.selectedLinkType}</h1>
+        <div
+          className='dropdownHeaderContainer'
+          onClick={this.toggleDropdown}>
+          <LinkTypeSelection linkTypeSelection={this.state.selectedLinkType}
+            click={() => { }}
+          ></LinkTypeSelection>
         </div>
       )
     }

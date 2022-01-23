@@ -18,14 +18,12 @@ const LinkTypeSelection = ({ selection, click }) => {
 
 class LinkTypeDropdown extends React.Component {
 
-
   linkTypeOptions = [
     { type: "Linkedin", color: "#0e76a8" },
     { type: "GitHub", color: "#2d333b" },
     { type: "Facebook", color: "#1877f2" },
     { type: "Custom", color: "grey" },
   ];
-
 
   constructor(props) {
     super(props);
@@ -41,10 +39,9 @@ class LinkTypeDropdown extends React.Component {
 
   updateLinkSelection = (currentLinkOption) => {
     if (this.state.visible) {
-      this.setState({ selectedLinkType: currentLinkOption })
+      this.setState({ selectedLinkType: currentLinkOption });
       this.toggleDropdown();
     }
-
   }
 
   renderDropdown() {

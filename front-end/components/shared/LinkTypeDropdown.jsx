@@ -1,34 +1,28 @@
 import React from 'react';
 import './sharedCSS/LinkSelection.css'
+import linkTypeColorMapping from './linkTypeColorMapping';
 
 /**
  * @returns: Pretty dropdown menu for selecting media link icon
  */
 
 
-const LinkTypeSelection = ({ selection, click }) => {
+const LinkTypeSelection = ({ linkTypeSelection, click }) => {
   return (
     <div className='singleLinkTypeOption'
-      onClick={() => { click(selection) }}
-      style={{ backgroundColor: selection.color }}>
-      {selection.type}
+      onClick={() => { click(linkTypeSelection) }}
+      style={{ backgroundColor: linkTypeColorMapping[linkTypeSelection] }}>
+      {linkTypeSelection}
     </div>
   )
 }
 
 class LinkTypeDropdown extends React.Component {
 
-  linkTypeOptions = [
-    { type: "Linkedin", color: "#0e76a8" },
-    { type: "GitHub", color: "#2d333b" },
-    { type: "Facebook", color: "#1877f2" },
-    { type: "Custom", color: "grey" },
-  ];
-
   constructor(props) {
     super(props);
     this.state = {
-      selectedLinkType: this.linkTypeOptions[0],
+      selectedLinkType: props.initialLinkType || "Linkedin",
       visible: false,
     }
   }
@@ -50,11 +44,11 @@ class LinkTypeDropdown extends React.Component {
       return (
         <div className='dropdownContainer'
           onClick={this.toggleDropdown}>
-          {this.linkTypeOptions.map((linkOption) => {
+          {Object.keys(linkTypeColorMapping).map((linkTypeOption) => {
             return (
               <LinkTypeSelection
-                key={linkOption.type}
-                selection={linkOption}
+                key={linkTypeOption}
+                linkTypeSelection={linkTypeOption}
                 click={this.updateLinkSelection}
               ></LinkTypeSelection>);
           })}
@@ -66,7 +60,7 @@ class LinkTypeDropdown extends React.Component {
         <div
           className='dropdownHeaderContainer'
           onClick={this.toggleDropdown}>
-          <LinkTypeSelection selection={this.state.selectedLinkType}
+          <LinkTypeSelection linkTypeSelection={this.state.selectedLinkType}
             click={() => { }}
           ></LinkTypeSelection>
         </div>

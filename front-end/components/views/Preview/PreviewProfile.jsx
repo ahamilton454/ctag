@@ -21,11 +21,7 @@ class PreviewProfile extends React.Component {
   render() {
     return (
       <div className='preview-profile'>
-        {/* <Link to="/login">
-          <PageHeader title="CTag"
-            rightButtonText="Login"
-            rightButtonCommand={() => { console.log("Logged In") }} />
-        </Link> */}
+
         <div className="vstack-links">
           <MediaLink />
           <MediaLink />

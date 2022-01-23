@@ -6,6 +6,7 @@ import BottomModal from './shared/BottomModal.jsx';
 import LoginView from './views/Auth/LoginView.jsx';
 import SignUpView from './views/Auth/SignUpView.jsx';
 import PreviewProfile from './views/Preview/PreviewProfile.jsx'
+import { Link } from 'react-router-dom';
 
 import {
   BrowserRouter,
@@ -25,6 +26,11 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <div className='app'>
+          <Link to="/login">
+            <PageHeader title="CTag"
+              rightButtonText="Login"
+              rightButtonCommand={() => { console.log("Logged In") }} />
+          </Link>
           <PreviewProfile />
         </div>
       </BrowserRouter>

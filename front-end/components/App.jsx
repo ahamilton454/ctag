@@ -26,9 +26,7 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <div className='app'>
-          <Modalize></Modalize>
-
-          {/* <Routes>
+          <Routes>
             <Route path="/">
               <Route index element={<LoginView />} />
               <Route path="preview"
@@ -36,7 +34,7 @@ class App extends React.Component {
               <Route path="login" element={<LoginView />} />
               <Route path="signup" element={<SignUpView />} />
             </Route>
-          </Routes> */}
+          </Routes>
         </div>
       </BrowserRouter>
 

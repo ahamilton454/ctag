@@ -6,6 +6,7 @@ import LoginView from './views/Auth/LoginView.jsx';
 import SignUpView from './views/Auth/SignUpView.jsx';
 import PreviewProfile from './views/Preview/PreviewProfile.jsx'
 import Headerize from './shared/Headerize.jsx';
+import Modalize from './shared/Modalize.jsx';
 
 
 import {
@@ -21,18 +22,13 @@ class App extends React.Component {
     super()
   }
 
-
-  renderWithModal(view) {
-
-  }
-
   render() {
     return (
       <BrowserRouter>
         <div className='app'>
+          <Modalize></Modalize>
 
-
-          <Routes>
+          {/* <Routes>
             <Route path="/">
               <Route index element={<LoginView />} />
               <Route path="preview"
@@ -40,7 +36,7 @@ class App extends React.Component {
               <Route path="login" element={<LoginView />} />
               <Route path="signup" element={<SignUpView />} />
             </Route>
-          </Routes>
+          </Routes> */}
         </div>
       </BrowserRouter>
 

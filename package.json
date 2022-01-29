@@ -31,6 +31,7 @@
     "pg": "^8.7.1",
     "react": ">=16.8.0",
     "react-router-dom": "^6.2.1",
+    "react-use": "^17.3.2",
     "style-loader": "^3.3.0"
   },
   "peerDependencies": {

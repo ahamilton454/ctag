@@ -2,7 +2,7 @@ import React from 'React';
 import PageHeader from '../../shared/PageHeader.jsx';
 import MediaLink from '../../shared/MediaLink.jsx';
 import TextEntry from '../../shared/TextEntry.jsx';
-import LinkTypeDropdown from '../../shared/LinkTypeDropdown.jsx';
+import UserLinks from '../../shared/UserLinks.jsx';
 
 class PreviewProfile extends React.Component {
   constructor(props) {
@@ -33,7 +33,7 @@ class PreviewProfile extends React.Component {
             onChange={this.onTextChange}
           />
         </div>
-        <LinkTypeDropdown></LinkTypeDropdown>
+        <UserLinks></UserLinks>
       </div>
     )
   }

@@ -35,6 +35,8 @@ class LinkTypeDropdown extends React.Component {
     if (this.state.visible) {
       this.setState({ selectedLinkType: currentLinkOption });
       this.toggleDropdown();
+      console.log(this.props.testprop);
+      this.props.onChange(currentLinkOption);
     }
   }
 

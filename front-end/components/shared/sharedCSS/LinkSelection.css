@@ -28,3 +28,16 @@
   align-items: center;
   justify-items: center;
 }
+
+.add-link-button {
+  color: white;
+  height: 60px;
+  width: 250px;
+  border-radius: 15px;
+  font-family: var(--theme-font);
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  line-height: 60px;
+  background-color: rgb(177, 177, 177);
+}

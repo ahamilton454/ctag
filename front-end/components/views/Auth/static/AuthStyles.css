@@ -21,7 +21,7 @@
 }
 
 .login-field {
-  width: calc(100vw / 2);
+  width: calc(100vw / (4 / 3));
   margin: 0 auto;
 }
 

@@ -3,12 +3,21 @@ import { Link } from 'react-router-dom';
 import PageHeader from './PageHeader.jsx';
 import { useSpring, animated } from '@react-spring/web'
 
-const Headerize = ({ view }) => {
+const Headerize = ({ children }) => {
   const props = useSpring({
     to: { opacity: 1 },
     from: { opacity: 0 },
     delay: 200,
   });
+
+  let childView = <div></div>;
+
+  React.Children.forEach(children, child => {
+    if (React.isValidElement(child)) {
+      childView = React.cloneElement(child);
+    }
+  });
+
 
   return (
     <animated.div style={props} className='header-view'>
@@ -18,7 +27,7 @@ const Headerize = ({ view }) => {
           rightButtonCommand={() => { console.log("Logged In") }} />
       </Link>
       <div className='header-subview' style={{ paddingTop: "126px" }}>
-        {view}
+        {childView}
       </div>
     </animated.div>
   )
